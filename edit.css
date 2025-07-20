@@ -1,82 +1,101 @@
+/* === BASE CONTROLLER === */
 .controller.edit {
   background: url(assets/base.svg);
 }
 
+/* === DISCONNECTED STATE === */
 .edit.disconnected {
   background: url(assets/disconnected.svg);
 }
 
-.edit .quadrant {
+/* === CUSTOM BACKGROUND GRADIENT === */
+body {
+  background: linear-gradient(to bottom, #FFFFFF, #93E9BE);
+}
+
+/* === OPTIONAL: Animated gradient toggle === */
+body.animated-bg {
+  background: linear-gradient(-45deg, #FFFFFF, #93E9BE, #FFFFFF);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === REMOVE QUADRANT AND PLAYER ICONS === */
+.edit .quadrant,
+.edit .p0,
+.edit .p1,
+.edit .p2,
+.edit .p3 {
   display: none;
 }
 
-.edit .p0 {
-    display: none;
-}
-
-.edit .p1 {
-    display: none;
-}
-
-.edit .p2 {
-    display: none;
-}
-
-.edit .p3 {
-    display: none;
-}
-
+/* === START / BACK BUTTONS === */
 .edit .back, .edit .start {
-    background: url(assets/start-select.svg);
-    width: 33px;
-    height: 33px;
-    opacity: 0;
+  background: url(assets/start-select.svg);
+  width: 33px;
+  height: 33px;
+  opacity: 0;
 }
 
 .edit .back.pressed, .edit .start.pressed {
-    opacity: 1;
+  opacity: 1;
 }
 
 .edit .back {
-    float: left;
+  float: left;
 }
 
 .edit .start {
-    background-position: 33px 0px;
-    float: right;
+  background-position: 33px 0px;
+  float: right;
 }
 
+/* === BUTTON BASE === */
 .edit .button {
   position: absolute;
   background: url(assets/abxy.svg);
 }
 
+/* === PRESSED STATE EFFECTS === */
 .edit .button.pressed {
-    background-position-y: -48px;
-    margin-top: 5px;
-    opacity: 1;
+  background-position-y: -48px;
+  margin-top: 5px;
+  opacity: 1;
 }
 
+/* === OPTIONAL: Glow on press === */
+body.glow-buttons .edit .button.pressed {
+  box-shadow: 0 0 10px #93E9BE, 0 0 20px #93E9BE;
+  border-radius: 50%;
+}
+
+/* === BUTTON POSITIONS === */
 .edit .a {
-    background-position: 0 0;
-    top: 108px;
-    left: 55px;
+  background-position: 0 0;
+  top: 108px;
+  left: 55px;
 }
 
 .edit .b {
-    background-position: -49px 0;
-    top: 57px;
-    right: 3px;
+  background-position: -49px 0;
+  top: 57px;
+  right: 3px;
 }
 
 .edit .x {
-    background-position: -98px 0;
-    top: 57px;
-    left: 4px;
+  background-position: -98px 0;
+  top: 57px;
+  left: 4px;
 }
 
 .edit .y {
-    background-position: 48px 0;
-    left: 55px;
-    top: 5px;
+  background-position: 48px 0;
+  left: 55px;
+  top: 5px;
 }
